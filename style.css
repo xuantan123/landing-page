@@ -1,0 +1,543 @@
+:root {
+    --background-color: #000000;
+    --white : #ffffff;
+    --gradient-colors: linear-gradient(89.88deg, #F1A14A 3.88%, #E66216 48.74%, #5E5D68 71.17%, #2C527E 93.6%);
+    --background: linear-gradient(180deg, #FE9A4C -40.83%, #10283C 100%);
+
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+html, body {
+    background-color: #000000 !important;
+    color: #ffffff;
+    overflow-x: hidden;
+    margin: 0 auto;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-color);
+    overflow-x: hidden;
+    margin: 0 auto; 
+}
+.logoprimary {
+    width: clamp(30px , 2vw + 8px , 52px);
+    height: clamp(30px , 2vw + 8px , 52px);
+}
+.logosecondary{
+    width: clamp(160px, 25vw, 187px); 
+    height: clamp(30px, 8vh, 36px); 
+}
+.nav-link {
+    font-size: clamp(16px, 2vw + 8px, 25px); 
+    color: var(--white) !important;
+    margin-left: 22px;
+}
+:root {
+    --background: linear-gradient(180deg, #FE9A4C -40.83%, #10283C 100%);
+}
+
+.connect-wallet-container {
+    width: clamp(240px, 30vw, 272px); /* Sử dụng clamp cho chiều rộng */
+    height: clamp(40px, 10vh, 48px);
+    background: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px; /* Bo tròn các góc */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+}
+
+.connect-wallet {
+    width: 100%; /* Chiều rộng đầy đủ */
+    height: 100%; /* Chiều cao đầy đủ */
+    background: transparent; /* Nền trong suốt */
+    color: white; /* Màu chữ trắng */
+    border: none; /* Không viền */
+    font-size: clamp(16px, 2vw + 8px, 25px); 
+    line-height: 48px; /* Đảm bảo chữ ở giữa */
+    cursor: pointer; /* Con trỏ thay đổi khi hover */
+    transition: background 0.3s ease; /* Hiệu ứng chuyển tiếp */
+    padding: 0; /* Không có khoảng cách bên trong */
+}
+
+.connect-wallet:hover {
+    background: rgba(255, 255, 255, 0.1); /* Hiệu ứng hover */
+    border-radius: 8px; /* Bo tròn khi hover */
+}
+/* ------------------------------------------------------ */
+.container-title {
+    width: 100%;
+}
+
+.ant-row {
+    display: flex;
+    flex-wrap: nowrap; /* Chắc chắn rằng các cột không bị bẻ dòng */
+    align-items: flex-start;  
+}
+
+.ant-col {
+    color: var(--white);
+    
+}
+
+.ant-col-14 {
+    flex: 0 0 65%; 
+}
+
+.ant-col-10 {
+    flex: 0 0 35%; 
+}
+.ant-col-left {
+    margin-top: 30px;
+    margin-left: 10px; 
+}
+
+@media (min-width: 768px) { 
+    .ant-col-left {
+        margin-left: clamp(0px, 5vw + 10px, 120px);
+        margin-top: 40px;
+    }
+}
+
+.ant-col-left h1 {
+    color: var(--white);
+    font-size: clamp(24px, 5vw + 20px, 70px);
+}
+
+.ant-col p {
+    width: 80%;
+    font-size: clamp(16px, 3vw + 10px, 25px);
+}
+
+.highlight {
+    background: var(--gradient-colors);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    display: inline; 
+}
+.power-by{
+    margin: 30px 0;
+    width: clamp(100px,60%,200px);
+
+}
+.cta-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #FE9A4C -40.83%, #10283C 100%);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: clamp(14px, 2vw + 8px, 18px);
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+    width: 170px;
+    min-width: 120px;
+}
+
+.cta-button {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 12px;
+}
+
+.cta-button:hover {
+    background: linear-gradient(90deg, #FE9A4C -40.83%, #10283C 100%);
+}
+
+.cta-button i {
+    margin-left: 10px;
+    font-size: clamp(16px, 2vw + 8px, 24px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-title {
+    margin-right: clamp(21px, 5vw + 20px, 120px);
+    width: clamp(200px, 40vw, 571px); 
+    height: clamp(500px, 70vh, 604px); 
+}
+/* ------------------------------------ */
+.box-container {
+    height: 500px; 
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.image-ellipse {
+    height: 60%; 
+    width: 10%; 
+    position: absolute;
+    top: 50%; 
+    transform: translate(0, -50%);
+}
+
+.box-voucher {
+    display: flex;
+    justify-content: center;
+    background-color: #000000;
+    padding: 3% 10%; 
+    gap: 6%;
+    flex-wrap: wrap;
+}
+
+.box {
+    flex: 1 1 calc(33% - 5%);
+    max-width: clamp(250px, 30vw, 390px); 
+    max-height: 150px;
+    aspect-ratio: 390 / 150;
+    padding: 1%; 
+    text-align: center;
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    background: url('/image/background-voucher.svg') no-repeat;
+    background-size: contain;
+}
+
+
+.box-title {
+    font-size: clamp(8px, 3vw , 25px); 
+    margin-bottom: 0px;
+    text-align: left;
+}
+
+.box-value {
+    font-size: clamp(10px, 4vw + 10px, 50px); 
+    font-weight: bold;
+    background: var(--gradient-colors);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    text-align: right;
+}
+.image-container {
+    background-color: var(--background-color); 
+    width: 100%; 
+    height: auto;
+    padding: 0; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    overflow: hidden; 
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+}
+/* ------------------------------------ */
+.section-header {
+    text-align: center; 
+    background-color: var(--background-color); 
+    padding-top: 75px;
+    padding-bottom: 25px;
+}
+
+.section-header h1 {
+    font-size: 50px; 
+    color: var(--white); 
+    margin: 10px;
+    
+}
+
+.highlight-text {
+    background: var(--gradient-colors); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    
+}
+/* ------------------------- */
+.swiper-container{
+    width: 100%;
+    height: 350px;
+}
+.swiper {
+    width: 88%;
+  }
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  .scroll-box {
+    max-width: 477px;
+    aspect-ratio: calc(477 / 328);
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    color: white;
+    display: flex ;
+    justify-content: space-between;
+    flex-direction: column;
+    background: url('/image/background-swiper.svg') no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .scroll-image {
+    max-width: 25%;
+    height: auto;
+    width: auto;
+    align-items: flex-start;
+  }
+  .scroll-title {
+    font-size: clamp(10px, 5vw, 30px);
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  .scroll-box h1 {
+    color: var(--white);
+  }
+  .scroll-content-text {
+    font-size: clamp(5px, 4vw, 20px);
+    color: var(--white); 
+    text-align: left;
+    margin: 0;
+  }
+  /* ---------------------------- */
+  .stake-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: var(--background-color);
+  }
+  
+  .image-ellipse1 {
+    position: absolute;
+    bottom: 120px; 
+    left: 10%;
+    transform: translateX(-50%); 
+  }
+  
+  .stake-table{
+    background-color: var(--background-color);
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; 
+    gap: 40px; 
+  }
+  .stake-box {
+    background-color: var(--background-color);
+    max-width: 1183.82px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: calc(1183.82 / 328);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: url('image/background-stakebox-1.svg') no-repeat;
+    background-size: contain;
+  }
+  .stake-box-2 {
+    background-color: var(--background-color);
+    max-width: 1183.82px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: calc(1183.82 / 328);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: url('image/background-stakebox-2.svg') no-repeat;
+    background-size: contain;
+    margin-left: auto;
+  }
+
+  .flex-box {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+  }
+  
+  .stake-image {
+    width: clamp(100px, 15vw, 150px); 
+    height: clamp(100px, 15vw, 150px); 
+    margin: clamp(20px, 5vw, 70px);
+    object-fit: contain;
+  }
+  
+  .stake-text {
+    color: white;
+  }
+  
+  .stake-text h1 {
+    color: var(--white);
+    font-size: clamp(15px,4vw,40px);
+    margin-bottom: 10px;
+  }
+  
+  .stake-text p {
+    font-size: clamp(8px,2vw,20px);
+    line-height: 1.5;
+  }
+  /* ----------------------------- */
+  .roadmap-container{
+    position: relative; 
+  width: 100%;
+  background-color: var(--background-color); 
+  padding: 20px; 
+  }
+  .image-ellipse2 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 200px; 
+    height: auto; 
+  }
+  .roadmap-header{
+    text-align: center; 
+    background-color: var(--background-color); 
+    ; 
+  }
+  .roadmap-header h1 {
+    font-size: clamp(30px, 5vw, 50px); 
+    color: var(--white);
+    padding-top: 60px;
+    margin-bottom: 0;
+}
+
+.roadmap-header p {
+    color: var(--white);
+    font-size: clamp(16px, 3vw, 25px); 
+    padding-bottom: 10px;
+}
+
+  /* ---------------- */
+  .stage-box {
+    background: var(--background-color); 
+    width: 100%;
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap;
+}
+
+.stage-content {
+    display: flex;
+    flex-direction: column; 
+    background-color: transparent; 
+    width: clamp(300px, 70vw, 1194px); 
+    height: clamp(100px, 15vw, 210.33px);
+    aspect-ratio: calc(1194 / 210.33);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    background: url('/image/stage.svg') no-repeat; 
+    background-size: cover; 
+    color: white; 
+    position: relative; 
+    box-sizing: border-box; 
+    margin-bottom: 10px;
+    justify-content: center;
+}
+.stage-container {
+    margin-left: clamp(120px, 15vw + 30px, 300px);
+    box-sizing: border-box; /* Đảm bảo padding và border được tính vào kích thước */
+    overflow: hidden; /* Giới hạn tràn nội dung */
+    width: 100%; 
+    display: inline-flex; /* Chiều cao của container phụ thuộc vào nội dung */
+    flex-direction: column; /* Đảm bảo các phần tử bên trong được sắp xếp theo chiều dọc */
+    align-items: flex-start; /* Căn trái cho các phần tử bên trong */
+}
+
+.stage-container h1 {
+    margin: 0px;
+    color: var(--white);
+    font-size: clamp(20px, 2vw + 2px, 40px); /* Tăng kích thước linh hoạt theo viewport */
+    text-align: left; /* Căn chỉnh tiêu đề sang trái */
+}
+
+
+.stage-container ul {
+    list-style-type: disc; 
+    margin: 0; 
+    padding-left: clamp(20px, 4vw, 50px); 
+    box-sizing: border-box;
+    max-width: 100%; /* Đảm bảo ul không bị quá rộng */
+}
+
+.stage-container li {
+    font-size: clamp(10px, 2vw, 25px); /* Điều chỉnh font-size hợp lý */ 
+    padding: 0;
+    overflow: visible; /* Cho phép hiển thị đầy đủ nội dung */
+    width: 100%; /* Đảm bảo các thẻ li chiếm đủ không gian */
+    list-style-position: inside; /* Hiển thị dấu chấm bên trong phần tử li */
+    white-space: normal; /* Cho phép văn bản xuống dòng nếu cần */
+}
+
+.rectangle {
+    width: 100vw;
+    display: block;
+    position: relative;
+    left: calc(-50vw + 50%);
+    margin-top: 110px;
+}
+
+/* ----------------------- */
+.container-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000; 
+    max-height: 800px;
+    overflow: hidden; 
+    padding-bottom: clamp(20px,100%,40px);
+    margin: 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    height: 100%;
+}
+.title {
+    background: var(--gradient-colors);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    font-size: clamp(40px, 8vw, 68px);
+    font-family: 'Zen Dots',sans-serif;   
+    margin-bottom: 5px ;
+    }
+    
+.tagline {
+    color: white;
+    font-size: clamp(20px, 5vw, 30px);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    position: relative;
+    }
+    
+.logo-sonic {
+    width: 90px;
+    height: 30px;
+    margin-left: 10px; 
+    }
+    
+.lines {
+    width: 486.44px;
+    margin: 10px 0 0 0; 
+    }
+    
+.social-icons {
+    margin-top: 35px; 
+    }
+    
+.social-icons img {
+    width: 46px;
+    height: 46px; 
+    margin: 0 10px; 
+    }
