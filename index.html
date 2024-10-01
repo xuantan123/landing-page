@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
     <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.18.0/antd.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
@@ -256,16 +257,16 @@
           spaceBetween: 0,
           breakpoints: {
             320: { // Khi màn hình >= 320px
-                slidesPerView: 1,
-                spaceBetween: 5,
+                slidesPerView: 2,
+                spaceBetween: 10,
             },
             640: {
-                slidesPerView: 1, // Khi màn hình >= 640px
+                slidesPerView: 2, // Khi màn hình >= 640px
                 spaceBetween: 10,
             },
             768: {
                 slidesPerView: 2, // Khi màn hình >= 768px
-                spaceBetween: 30,
+                spaceBetween: 15,
             },
             1024: {
                 slidesPerView: 3, // Khi màn hình >= 1024px
@@ -275,25 +276,45 @@
         });
       </script>
     <script>
+      let currentAccount = null;
+
+      // Hàm cập nhật địa chỉ ví
+      function updateWalletAddress(address) {
+          const shortenedAddress = address.slice(0, 6) + '...' + address.slice(-4);
+          document.getElementById('connectButton').textContent = shortenedAddress;
+      }
+
+      // Sự kiện khi nhấn nút kết nối
       document.getElementById('connectButton').addEventListener('click', async () => {
-    if (typeof window.ethereum !== 'undefined') {
-        try {
-            // Request account access
-            const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-            const walletAddress = accounts[0];
+          if (typeof window.ethereum !== 'undefined') {
+              // Nếu chưa có địa chỉ, yêu cầu kết nối
+              if (!currentAccount) {
+                  try {
+                      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                      currentAccount = accounts[0];
+                      updateWalletAddress(currentAccount);
+                  } catch (error) {
+                      console.error("Có lỗi xảy ra:", error);
+                  }
+              } else {
+                  // Địa chỉ đã có, không yêu cầu kết nối lại
+                  console.log("Địa chỉ đã được kết nối:", currentAccount);
+              }
+          } else {
+              alert('MetaMask chưa được cài đặt. Vui lòng cài đặt để kết nối ví của bạn.');
+          }
+      });
 
-            // Shorten the wallet address
-            const shortenedAddress = walletAddress.slice(0, 6) + '...' + walletAddress.slice(-4);
-            document.getElementById('connectButton').textContent = shortenedAddress; // Display the wallet address
-        } catch (error) {
-            console.error("User denied account access or error occurred:", error);
-        }
-    } else {
-        alert('MetaMask is not installed. Please install it to connect your wallet.');
-    }
-});
-
+      // Sự kiện khi tài khoản trong MetaMask thay đổi
+      window.ethereum.on('accountsChanged', (accounts) => {
+          if (accounts.length > 0) {
+              currentAccount = accounts[0];
+              updateWalletAddress(currentAccount);
+          } else {
+              currentAccount = null;
+              document.getElementById('connectButton').textContent = 'Kết nối ví';
+          }
+      });
   </script>
-  
 </body>
 </html>
