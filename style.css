@@ -305,9 +305,12 @@ body {
   
   .scroll-box {
     max-width: clamp(300px, 60vw, 477px);
-    max-height: clamp(170px,60vw, 288px);
+    max-height: clamp(170px,60vw, 328px);
     aspect-ratio: calc(477 / 328);
-    padding: 40px;
+    padding-left: clamp(20px, 5vw, 40px);
+    padding-top: clamp(10px, 3vw, 30px);
+    padding-bottom: clamp(10px, 3vw, 30px);
+    padding-right: clamp(5px, 2vw, 7px);
     text-align: center;
     position: relative;
     color: white;
@@ -318,13 +321,26 @@ body {
     background-size: contain;
     background-position: center;
   }
-  .scroll-image {
-    max-width: 25%;
-    max-height: 28%;
-    height: auto;
-    width: auto;
-    align-items: flex-start;
-  }
+  .scroll-image1 {
+    width: clamp(40px, 10vw, 92px); /* Tối thiểu 80px, tối đa 92px */
+    height: clamp(40px, 8vw, 91px); /* Tối thiểu 70px, tối đa 91px */
+}
+
+.scroll-image2 {
+    width: clamp(40px, 7vw, 115px); /* Tối thiểu 100px, tối đa 115px */
+    height: clamp(40px, 6vw, 73px); /* Tối thiểu 60px, tối đa 73px */
+}
+
+.scroll-image3 {
+    width: clamp(40px, 5vw, 140px); /* Tối thiểu 130px, tối đa 141px */
+    height: clamp(46px, 7vw, 111px); /* Tối thiểu 100px, tối đa 111px */
+}
+
+.scroll-image4 {
+    width: clamp(40px, 7vw, 133px); /* Tối thiểu 120px, tối đa 133px */
+    height: clamp(46px, 9vw, 90px); /* Tối thiểu 80px, tối đa 90px */
+}
+
   .scroll-title {
     font-size: clamp(20px, 3vw, 30px);
     margin-bottom: 10px;
